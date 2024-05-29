@@ -1,9 +1,25 @@
-const test = () => {
-    const r = new XMLHttpRequest();
-    r.open("get", "http://localhost:7777");
-    r.send();
+const loadProxySettings = () => {
+    browser.proxy.settings.get({}, (details) => {
+        const host = details.value.http.split(":")
+        const status = details.value.proxyType;
+
+        document.getElementById("ip").value = host[0];
+        document.getElementById("port").value = host[1];
+        document.getElementById("proxyType").innerText = status;
+
+        if (status == "system") {
+            document.getElementById("submit").classList.add("proxyOf");
+        }
+        else if (status == "manual") document.getElementById("submit").classList.add("proxyOn");
+    })
+}
+
+const toggle = () => {
 }
 
 window.onload = () => {
-    const button = document.getElementById("submit").onclick = test;
+    loadProxySettings();
+    // document.getElementById("proxy_switch").onclick = toggle;
 }
+
+

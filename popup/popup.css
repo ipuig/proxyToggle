@@ -1,4 +1,5 @@
-body {
+
+header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,30 +7,33 @@ body {
 }
 
 svg {
-    height: 6em;
+    height: 6.3em;
     width: 6em;
+    stroke: black;
+    stroke-width: 1;
+}
+
+svg.proxyOn {
     fill: green;
+}
+
+svg.proxyOff {
+    fill: white;
 }
 
 hr {
     width: 100%;
 }
 
-body > header {
-    width: 100%;
-    height: 10em;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body > header > div:hover {
-    border: 2px solid red;
-}
-
 body > main {
     padding: 0.5em;
+}
+
+body > main > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 body > main > form > div {
@@ -38,6 +42,14 @@ body > main > form > div {
 }
 
 body > main > form > div > label {
+    margin-top: 1em;
+}
+
+body > main > form > div > label {
+    margin-top: 1em;
+}
+
+body > main > form > button {
     margin-top: 1em;
 }
 
