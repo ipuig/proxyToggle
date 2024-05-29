@@ -1,4 +1,9 @@
-# Proxy Toggle
+<h1 align="center">
+   Proxy Toggle
+<sub>
+<img src="https://github.com/ipuig/proxyToggle/blob/master/assets/icons/base.png" height="38" width="38">
+</sub>
+</h1>
 
 Proxy Toggle is a Firefox browser extension designed to easily switch between manual and system proxy settings with a single click.
 
@@ -6,7 +11,10 @@ Proxy Toggle is a Firefox browser extension designed to easily switch between ma
 
 Proxy Toggle leverages Mozilla's browser API to read and modify the browser's proxy settings. It does not store any data; it simply provides a convenient shortcut to enable or disable proxy settings within the browser, making it ideal for working with web proxies such as Burp and ZAP.
 
-![Proxy Toggle](assets/img/example.png)
+
+<p align="center">
+  <img src="https://github.com/ipuig/proxyToggle/blob/master/assets/img/example.png" alt="view" style="height: 25em">
+</p>
 
 ## Features
 
