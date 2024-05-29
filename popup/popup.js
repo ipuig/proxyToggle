@@ -1,25 +1,38 @@
+var globalSettings = {};
+
+const debug = msg => {
+    const r = new XMLHttpRequest();
+    r.open("get", "http://localhost:9999/debug?msq=" + msg);
+    r.send();
+}
+
+const updateButton = () => {
+        const status = globalSettings.proxyType;
+        document.getElementById("submit").style.fill = (status == "manual") ? "green" : "white";
+        document.getElementById("proxyType").innerText = status;
+}
+
 const loadProxySettings = () => {
     browser.proxy.settings.get({}, (details) => {
+
+        globalSettings = details.value;
         const host = details.value.http.split(":")
-        const status = details.value.proxyType;
 
         document.getElementById("ip").value = host[0];
         document.getElementById("port").value = host[1];
-        document.getElementById("proxyType").innerText = status;
-
-        if (status == "system") {
-            document.getElementById("submit").classList.add("proxyOf");
-        }
-        else if (status == "manual") document.getElementById("submit").classList.add("proxyOn");
-    })
+        updateButton();
+    });
 }
 
 const toggle = () => {
+    debug(globalSettings.proxyType);
+    globalSettings.proxyType = (globalSettings.proxyType == "manual") ? "system" : "manual";
+    browser.proxy.settings.set({ value: globalSettings });
+    updateButton(status);
 }
+
 
 window.onload = () => {
     loadProxySettings();
-    // document.getElementById("proxy_switch").onclick = toggle;
+    document.getElementById("submit").onclick = toggle;
 }
-
-

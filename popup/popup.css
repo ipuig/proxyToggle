@@ -11,14 +11,11 @@ svg {
     width: 6em;
     stroke: black;
     stroke-width: 1;
+    fill: blue;
 }
 
-svg.proxyOn {
-    fill: green;
-}
-
-svg.proxyOff {
-    fill: white;
+h3#proxyType {
+  text-transform: capitalize;
 }
 
 hr {
