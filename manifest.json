@@ -1,19 +1,19 @@
 {
     "manifest_version": 2,
+    "author": "ipuig",
     "version": "1.0",
-    "name": "ProxyToggle",
+    "name": "Proxy Toggle",
     "description": "Toggle custom proxy setting by clicking the extension's icon",
     "icons" : {
-        "96": "icons/base.webp"
+        "96": "assets/icons/base.png",
+        "48": "assets/icons/base.png"
     },
     "browser_action": {
         "default_popup": "popup/popup.html",
-        "default_icon": "icons/base.webp"
+        "default_icon": "assets/icons/base.png"
     },
     "permissions": [
         "browserSettings",
-        "proxy",
-        "storage",
-        "activeTab"
+        "proxy"
     ]
 }
