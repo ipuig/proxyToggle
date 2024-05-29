@@ -1,11 +1,5 @@
 var globalSettings = {};
 
-const debug = msg => {
-    const r = new XMLHttpRequest();
-    r.open("get", "http://localhost:9999/debug?msq=" + msg);
-    r.send();
-}
-
 const disableForm = isDisabled => {
     const color = isDisabled ? "gray" : "black";
     for (let idx = 0,
@@ -46,14 +40,20 @@ const loadProxySettings = () => {
 }
 
 const toggle = () => {
-    debug(globalSettings.proxyType);
     globalSettings.proxyType = (globalSettings.proxyType == "manual") ? "system" : "manual";
     browser.proxy.settings.set({ value: globalSettings });
     updateButton(status);
+}
+
+const update = () => {
+    const http = `http://${document.getElementById("ip").value}:${document.getElementById("port").value}`
+    globalSettings.http = http;
+    browser.proxy.settings.set({ value: globalSettings });
 }
 
 
 window.onload = () => {
     loadProxySettings();
     document.getElementById("submit").onclick = toggle;
+    document.getElementById("update").onclick = update;
 }
