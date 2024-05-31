@@ -33,8 +33,19 @@ Proxy Toggle leverages Mozilla's browser API to read and modify the browser's pr
    - Enable manual proxy settings by clicking the button until it turns green.
    - Enter the desired host and port in the input fields.
    - Click 'Update' to apply the new proxy settings.
-
+     
+## Requirements
+- Allow the extension on Incognito
+   - browse `about:addons` in firefox
+   - click `Proxy Toggle > Details > Run in Private Windows`
+   - check `Allow`
+  
 ## Installation
+
+### From firefox ADD-ONS
+[Proxy Toggle](https://addons.mozilla.org/en-US/firefox/addon/one-button-proxy-toggle/)
+
+### Load as a temporary extension (Testing only)
 
 1. Download the extension
 ```
@@ -46,6 +57,5 @@ git clone https://github.com/ipuig/proxyToggle.git
 4. And select the manifest.json within the root of the cloned repo.
 
 ---
-**NOTE:** You might want to enable `pin to toolbar`, and allow permissions for incognito.
-
+**NOTE:** You might want to pin the extension to your browser's toolbar. 
 
